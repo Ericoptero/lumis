@@ -1,5 +1,13 @@
+import GlobalStyle from "./config/globalStyle";
+import { HomePage } from "./pages/HomePage";
+
 function App() {
-  return <h1>Boa sorte</h1>;
+  return (
+    <>
+      <HomePage />
+      <GlobalStyle />
+    </>
+  );
 }
 
 export default App;
