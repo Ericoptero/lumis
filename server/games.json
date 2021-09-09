@@ -1,0 +1,36 @@
+[
+  { "id": 1,
+    "game": "God of War 4", 
+    "price": 60,
+    "description": "Muitos anos se passaram desde que Kratos teve sua vingança contra os deuses do Olimpo,[b] e agora ele vive com seu filho Atreus em Midgard. O jogo começa após a morte da segunda esposa de Kratos e mãe de Atreus, Faye. Seu último desejo era que suas cinzas fossem espalhadas no pico mais alto dos nove reinos nórdicos. Antes de iniciar sua jornada, Kratos é confrontado por um homem misterioso com poderes divinos. Depois de aparentemente matá-lo, Kratos e Atreus partem em sua jornada.",
+    "image": "http://localhost:5000/public/god.jpeg"
+  },
+  {
+     "id": 2,
+    "game": "Call Of Duty Warzone", 
+    "price": 0,
+    "description": "Warzone permite um combate em um modo multijogador on-line entre 150 jogadores na cidade fictícia de Verdansk, que é vagamente baseada na cidade de Donetsk, no leste da Ucrânia. ",
+    "image": "http://localhost:5000/public/cod.jpeg"
+  },
+  {
+    "id": 3,
+    "game": "Ace Combat 7", 
+    "price": 105,
+    "description": "Ace Combat 7: Skies Unknown é um jogo eletrônico de simulação de combate aéreo desenvolvido pela Bandai Namco Studios e publicado pela Bandai Namco Entertainment.",
+    "image": "http://localhost:5000/public/ace.png"
+  },
+  {
+    "id": 4,
+    "game": "Assassin's Creed Odyssey", 
+    "price": 45,
+    "description": "Assassin's Creed Odyssey é um jogo eletrônico de RPG de ação desenvolvido pela Ubisoft Quebec e publicado pela Ubisoft. É o décimo primeiro título principal da série Assassin's Creed e foi lançado em 5 de outubro de 2018, para Microsoft Windows, PlayStation 4, Xbox One e Nintendo Switch.",
+    "image": "http://localhost:5000/public/odyssey.png"
+  },
+  {
+    "id": 5,
+    "game": "Assassin's Creed Origins", 
+    "price": 36,
+    "description": "Assassin's Creed Origins é um jogo eletrônico de ação-aventura, produzido pela Ubisoft Montreal e publicado pela Ubisoft.",
+    "image": "http://localhost:5000/public/origins.png"
+  }
+]
