@@ -1,17 +1,17 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
 export const MainSection = styled.main`
   display: flex;
-  flex: 1;
+  justify-content: center;
+  width: 100%;
+  padding: 0 20px;
+`;
+
+export const Content = styled.div`
   max-width: 1200px;
   width: 100%;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const SearchContainer = styled.div`
@@ -32,5 +32,4 @@ export const SearchContainer = styled.div`
 export const GamesList = styled.ul`
   list-style: none;
   margin: 60px 0;
-  overflow: auto;
 `;

@@ -1,17 +1,26 @@
 import { Header } from "../../components/Header";
+import { GameCard } from "../../components/GameCard";
 
-import { Container, MainSection, SearchContainer, GamesList } from "./styles";
+import { MainSection, Content, SearchContainer, GamesList } from "./styles";
 
 export function HomePage() {
   return (
-    <Container>
+    <>
       <Header />
+
       <MainSection>
-        <SearchContainer>
-          <input type="text" placeholder="Pesquise aqui o seu jogo de Playstation 4" />
-        </SearchContainer>
-        <GamesList />
+        <Content>
+          <SearchContainer>
+            <input type="text" placeholder="Pesquise aqui o seu jogo de Playstation 4" />
+          </SearchContainer>
+
+          <GamesList>
+            <GameCard />
+            <GameCard />
+            <GameCard />
+          </GamesList>
+        </Content>
       </MainSection>
-    </Container>
+    </>
   );
 }
