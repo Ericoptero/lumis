@@ -1,9 +1,16 @@
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
+
 import { Header } from "../../components/Header";
 import { GameCard } from "../../components/GameCard";
 
-import { MainSection, Content, SearchContainer, GamesList } from "./styles";
-import { useEffect, useState } from "react";
-import { api } from "../../services/api";
+import { 
+  MainSection,
+  Content,
+  SearchContainer,
+  GamesList,
+  NotFound
+} from "./styles";
 
 interface GameProps {
   id: number,
@@ -15,6 +22,7 @@ interface GameProps {
 
 export function HomePage() {
   const [games, setGames] = useState<GameProps[]>([]);
+  const [filteredGames, setFilteredGames] = useState<GameProps[]>([]);
   const [filter, setFilter] = useState("");
   
   useEffect(() => {
@@ -31,6 +39,14 @@ export function HomePage() {
     fetchGames();
   }, [])
 
+  useEffect(() => { 
+    const filtered = games.filter(game => 
+      game.game.toLowerCase().includes(filter.toLowerCase())
+    );
+
+    setFilteredGames(filtered);
+  }, [games, filter])
+
   return (
     <>
       <Header />
@@ -45,16 +61,19 @@ export function HomePage() {
               value={filter}
             />
           </SearchContainer>
-
-          {games.length !== 0 ? (
+          
+          {filteredGames.length !== 0 ? (
             <GamesList>
-              {games
-                .filter(game => game.game.toLowerCase().includes(filter.toLowerCase()))
-                .map(game => <GameCard key={game.id} game={game} />)
-              }
+              {filteredGames
+                .map(game => <GameCard key={game.id} game={game} />)}
             </GamesList>
           ) : (
-            <div>Não foi possível encontrar nenhum jogo{filter ? ` com: ${filter}` : '.'}</div>
+            <NotFound>
+              <p>
+                Não foi possível encontrar nenhum jogo
+                {filter ? <> com: <span>{filter}</span></> : '.'}
+              </p>
+            </NotFound>
           )}
         </Content>
       </MainSection>
