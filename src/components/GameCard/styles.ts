@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface GameImageProps {
+  src: string;
+}
+
 export const Container = styled.li`
   display: flex;
   align-items: center;
@@ -13,11 +17,12 @@ export const Container = styled.li`
   }
 `;
 
-export const GameImage = styled.div`
+export const GameImage = styled.div<GameImageProps>`
   width: 126px;
   height: 126px;
   border-radius: 50%;
-  background: url() #C4C4C4 center center;
+  background: url(${props => props.src}) #C4C4C4 no-repeat center center;
+  background-size: cover;
 `;
 
 export const Content = styled.div`

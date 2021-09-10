@@ -1,12 +1,20 @@
 import { Container, GameImage, Content, Button } from './styles';
 
-export function GameCard() {
+interface GameProps {
+  id: number,
+  game: string,
+  price: number,
+  description: string,
+  image: string,
+}
+
+export function GameCard({ game }: { game: GameProps}) {
   return (
     <Container>
-      <GameImage />
+      <GameImage src={game.image} />
       <Content>
-        <h2>Nome do jogo</h2>
-        <p>Preço do jogo</p>
+        <h2>{game.game}</h2>
+        <p>{game.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
       </Content>
       <Button type="button">Sobre</Button>
     </Container>
