@@ -1,8 +1,9 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { api } from "../../services/api";
 
 import { Header } from "../../components/Header";
 import { GameCard } from "../../components/GameCard";
+import { Modal } from "../../components/Modal";
 
 import { 
   MainSection,
@@ -12,7 +13,7 @@ import {
   NotFound
 } from "./styles";
 
-interface GameProps {
+export interface GameProps {
   id: number,
   game: string,
   price: number,
@@ -24,6 +25,13 @@ export function HomePage() {
   const [games, setGames] = useState<GameProps[]>([]);
   const [filteredGames, setFilteredGames] = useState<GameProps[]>([]);
   const [filter, setFilter] = useState("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [selectedGame, setSelectedGame] = useState<GameProps>({} as GameProps)
+
+  const handleOpenModal = useCallback((game) => {
+    setSelectedGame(game);
+    setIsModalVisible(true);
+  }, [])
   
   useEffect(() => {
     async function fetchGames() {
@@ -65,7 +73,13 @@ export function HomePage() {
           {filteredGames.length !== 0 ? (
             <GamesList>
               {filteredGames
-                .map(game => <GameCard key={game.id} game={game} />)}
+                .map(game => 
+                  <GameCard 
+                    key={game.id}
+                    game={game}
+                    handleOpenModal={() => handleOpenModal(game)}
+                  />
+                )}
             </GamesList>
           ) : (
             <NotFound>
@@ -76,6 +90,12 @@ export function HomePage() {
             </NotFound>
           )}
         </Content>
+        {isModalVisible && 
+          <Modal 
+            handleClose={() => setIsModalVisible(false)}
+            game={selectedGame}
+          />
+        }
       </MainSection>
     </>
   );

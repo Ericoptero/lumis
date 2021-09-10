@@ -39,14 +39,3 @@ export const Content = styled.div`
     font-size: 24px;
   }
 `;
-
-export const Button = styled.button`
-  width: 265px;
-  height: 65px;
-  background-color: #eba417;
-  border: 0;
-  border-radius: 100px;
-  color: #000;
-  font-size: 20px;
-  font-weight: bold;
-`;

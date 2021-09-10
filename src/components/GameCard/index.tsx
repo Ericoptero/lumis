@@ -1,14 +1,14 @@
-import { Container, GameImage, Content, Button } from './styles';
+import { Button } from '../Button'
+import { GameProps } from '../../pages/HomePage';
 
-interface GameProps {
-  id: number,
-  game: string,
-  price: number,
-  description: string,
-  image: string,
+import { Container, GameImage, Content } from './styles';
+
+interface GameCardProps {
+  game: GameProps;
+  handleOpenModal: () => void;
 }
 
-export function GameCard({ game }: { game: GameProps}) {
+export function GameCard({ game, handleOpenModal }: GameCardProps) {
   return (
     <Container>
       <GameImage src={game.image} />
@@ -16,7 +16,7 @@ export function GameCard({ game }: { game: GameProps}) {
         <h2>{game.game}</h2>
         <p>{game.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</p>
       </Content>
-      <Button type="button">Sobre</Button>
+      <Button type="button" onClick={handleOpenModal}>Sobre</Button>
     </Container>
   );
 }
