@@ -15,6 +15,10 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
+  input {
+    font-family: 'Roboto', sans-serif;
+  }
+
   button {
     cursor: pointer;
   }
