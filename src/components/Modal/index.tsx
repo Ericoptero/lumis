@@ -16,7 +16,11 @@ export function Modal ({ handleClose, game }: ModalProps) {
   }, [game.id, handleClose]);
 
   return (
-    <Container id={String(game.id)} onClick={(e) => handleCloseOutsideModal(e)}>
+    <Container 
+      id={String(game.id)} 
+      data-testid='game-id' 
+      onClick={(e) => handleCloseOutsideModal(e)}
+    >
       <ModalContainer>
         <Content>
           <img src={game.image} alt={game.game} />
