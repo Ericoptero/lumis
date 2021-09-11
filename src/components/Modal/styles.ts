@@ -37,11 +37,25 @@ export const ModalContainer = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: #be8310; 
   }
+
+  @media (max-width: 768px) {
+    width: 90%;
+    height: 90%;
+  }
+
+  @media (max-width: 768px) {
+    border-radius: 10px;
+
+    ::-webkit-scrollbar {
+      width: 5px;
+    }
+  }
 `;
 
 export const Content = styled.div`
   width: 478px;
   height: fit-content;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,6 +64,7 @@ export const Content = styled.div`
 
   img {
     width: 100%;
+    border-radius: 4px;
   }
 
   h2 {
@@ -65,5 +80,26 @@ export const Content = styled.div`
 
   button {
     margin-top: 24px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 36px 16px;
+
+    h2 {
+      margin-top: 36px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    padding: 24px 16px;
+
+    h2 {
+      font-size: 18px;
+      margin-top: 24px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 `;

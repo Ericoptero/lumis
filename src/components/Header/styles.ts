@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
-
 export const Container = styled.header`
   width: 100%;
   height: 80px;
@@ -9,6 +8,10 @@ export const Container = styled.header`
   justify-content: center;
   padding: 0 20px;
   border-bottom: 1px solid #fff;
+
+  @media (max-width: 768px) {
+    height: 60px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -20,7 +23,7 @@ export const Wrapper = styled.div`
 
   img {
     width: 215px;
-    height: 42px;
+    height: auto;
   }
 
   nav {
@@ -41,6 +44,22 @@ export const Wrapper = styled.div`
       border-radius: 10px 10px 0px 0px;
       background-color: #eba417;
       bottom: -1px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    img {
+      width: 150px;
+    }
+
+    nav {
+      margin-left: 40px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    nav {
+      margin-left: 25px;
     }
   }
 `;

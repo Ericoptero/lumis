@@ -4,8 +4,14 @@ export const MainSection = styled.main`
   display: flex;
   justify-content: center;
   width: 100%;
+  min-height: calc(100vh - 80px);
   height: 100%;
-  padding: 0 20px;
+  padding: 60px 20px;
+
+  @media (max-width: 768px) {
+    min-height: calc(100vh - 60px);
+    padding: 40px 12px;
+  }
 `;
 
 export const Content = styled.div`
@@ -17,13 +23,16 @@ export const Content = styled.div`
 `;
 
 export const SearchContainer = styled.div`
-  margin-top: 60px;
   width: 100%;
 `;
 
 export const GamesList = styled.ul`
   list-style: none;
-  margin: 60px 0;
+  margin-top: 60px;
+
+  @media (max-width: 768px) {
+    margin-top: 40px;
+  }
 `;
 
 export const NotFound = styled.div`
@@ -42,6 +51,13 @@ export const NotFound = styled.div`
     span {
       display: block;
       color: #61DCFB;
+    }
+  }
+
+  @media (max-width: 576px) {
+    p {
+      width: 300px;
+      font-size: 24px;
     }
   }
 `;
