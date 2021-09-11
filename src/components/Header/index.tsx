@@ -1,6 +1,6 @@
 import { Container, Wrapper, StyledNavLink } from './styles';
 
-import Logo from '../../assets/lumis1.svg';
+import Logo from '../../assets/lumis.svg';
 
 export function Header() {
   return (

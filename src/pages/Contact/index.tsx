@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { Button } from "../../components/Button";
 import { Header } from "../../components/Header";
 import { Input } from '../../components/Input';
+import { api } from '../../services/api';
 
 import { Container, Content, ButtonWrapper, Error } from './styles';
 
@@ -12,7 +13,7 @@ export function Contact() {
     initialValues: {
       name: '',
       email: '',
-      telephone: ''
+      phone: ''
     },
     validationSchema: Yup.object({
       name: Yup.string()
@@ -20,13 +21,14 @@ export function Contact() {
       email: Yup.string()
         .email('Email inválido')
         .required('O email é obrigatório'),
-      telephone: Yup.string()
+      phone: Yup.string()
         .max(11, 'O telefone deve ter no máximo 11 números')
         .min(10, 'O telefone deve ter no mínimo 10 números')
         .required('O telefone é obrigatório')
     }),
-    onSubmit: values => {
-      console.log(values)
+    onSubmit: async (values) => {
+      await api.post('contact', values);
+      formik.resetForm();
     }
   })
 
@@ -63,21 +65,21 @@ export function Contact() {
             ) : null}
 
             <Input
-              id="telephone"
-              name="telephone"
+              id="phone"
+              name="phone"
               type="text"
               placeholder="Informe o seu telefone"
               onChange={formik.handleChange}
-              value={formik.values.telephone}
+              value={formik.values.phone}
             />
-            {formik.touched.telephone && formik.errors.telephone ? (
-              <Error>{formik.errors.telephone}</Error>
+            {formik.touched.phone && formik.errors.phone ? (
+              <Error>{formik.errors.phone}</Error>
             ) : null}
 
             <ButtonWrapper>
-              <Button type="reset">Resetar</Button>
+              <Button type="reset" onClick={() => formik.resetForm()}>Resetar</Button>
               <Button type="submit">Enviar</Button>
-            </ButtonWrapper>  
+            </ButtonWrapper>
           </form>
         </Content>
       </Container>
