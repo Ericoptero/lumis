@@ -9,4 +9,3 @@ export function Button({ children, ...rest }: ButtonProps) {
     <StyledButton type="button" {...rest}>{children}</StyledButton>
   );
 }
-

@@ -1,6 +1,6 @@
-import { Container, Wrapper, NavLink } from './styles';
+import { Container, Wrapper, StyledNavLink } from './styles';
 
-import Logo from '../../assets/lumis.svg';
+import Logo from '../../assets/lumis1.svg';
 
 export function Header() {
   return (
@@ -8,8 +8,8 @@ export function Header() {
       <Wrapper>
         <img src={Logo} alt="Lumis" />
         <nav>
-          <NavLink href="/" isActive>Home</NavLink>
-          <NavLink href="/contact">Contato</NavLink>
+          <StyledNavLink exact to="/" activeClassName="active-link">Home</StyledNavLink>
+          <StyledNavLink to="/contact" activeClassName="active-link">Contato</StyledNavLink>
         </nav>
       </Wrapper>
     </Container>

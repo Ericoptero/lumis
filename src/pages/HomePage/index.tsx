@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import { api } from "../../services/api";
 
 import { Header } from "../../components/Header";
+import { Input } from "../../components/Input";
 import { GameCard } from "../../components/GameCard";
 import { Modal } from "../../components/Modal";
 
@@ -62,7 +63,7 @@ export function HomePage() {
       <MainSection>
         <Content>
           <SearchContainer>
-            <input 
+            <Input 
               type="text" 
               placeholder="Pesquise aqui o seu jogo de Playstation 4" 
               onChange={(e) => setFilter(e.target.value)}
