@@ -49,7 +49,7 @@ export function Contact() {
               value={formik.values.name}
             />
             {formik.touched.name && formik.errors.name ? (
-              <Error>{formik.errors.name}</Error>
+              <Error data-testid='error'>{formik.errors.name}</Error>
             ) : null}
 
             <Input
@@ -61,7 +61,7 @@ export function Contact() {
               value={formik.values.email}
             />
             {formik.touched.email && formik.errors.email ? (
-              <Error>{formik.errors.email}</Error>
+              <Error data-testid='error'>{formik.errors.email}</Error>
             ) : null}
 
             <Input
@@ -73,7 +73,7 @@ export function Contact() {
               value={formik.values.phone}
             />
             {formik.touched.phone && formik.errors.phone ? (
-              <Error>{formik.errors.phone}</Error>
+              <Error data-testid='error'>{formik.errors.phone}</Error>
             ) : null}
 
             <ButtonWrapper>

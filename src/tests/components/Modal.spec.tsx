@@ -1,7 +1,7 @@
 import { render, screen, fireEvent } from '@testing-library/react';
 import { Modal } from '../../components/Modal';
 
-describe('Input Component', () => {
+describe('Modal Component', () => {
   it('renders correctly', () => {
     render(
       <Modal 

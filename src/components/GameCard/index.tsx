@@ -4,13 +4,14 @@ import { GameProps } from '../../pages/HomePage';
 import { Container, Wrapper, GameImage, Content } from './styles';
 
 interface GameCardProps {
+  dataTestId?: string;
   game: GameProps;
   handleOpenModal: () => void;
 }
 
-export function GameCard({ game, handleOpenModal }: GameCardProps) {
+export function GameCard({ dataTestId, game, handleOpenModal }: GameCardProps) {
   return (
-    <Container>
+    <Container data-testid={dataTestId} >
       <Wrapper>
         <GameImage src={game.image} />
         <Content>

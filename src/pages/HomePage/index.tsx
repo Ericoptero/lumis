@@ -37,11 +37,11 @@ export function HomePage() {
   useEffect(() => {
     async function fetchGames() {
       try {
-        const { data } = await api.get('games');
+        const { data = [] } = await api.get<GameProps[]>('games');
 
         setGames(data);
       } catch(e) {
-        console.log(e);
+        // Continua sem nenhum jogo encontrado na página
       }
     }
 
@@ -79,6 +79,7 @@ export function HomePage() {
                     key={game.id}
                     game={game}
                     handleOpenModal={() => handleOpenModal(game)}
+                    dataTestId="gamecard"
                   />
                 )}
             </GamesList>
