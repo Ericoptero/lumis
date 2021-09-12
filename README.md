@@ -14,6 +14,7 @@ npm run start-server ou yarn start-server
 
 
 <p>Testes da aplicação foram criados, para checar rode o comando</p>
+
 ```javascript
 npm run test ou yarn test
 ```
